@@ -12,8 +12,8 @@ For example: if your machines hostname is "tc-server" and versions file is in "/
 If it is also the localhost "localhost/versions" is possible, too. If it is another server in your network, you will need a DNS A record or an entry in your hosts, because WoW needs a domain!
 
 ## The files
-- cdns.txt contains the link to the cdns file
-- versions.txt contains the link to the versions file
+- cdns.txt contains the link to the cdns file - max 32 chars
+- versions.txt contains the link to the versions file - max 36 chars
 - certs.txt contains the certs base64 coded
 
 For getting the cdn files, you can use my https://github.com/V-Cyberpunk/Linux-Server-Toolscripts/blob/main/mk_cdn.sh script. eu, us, arctium are the same, but good to have all sources maybe.
