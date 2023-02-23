@@ -14,3 +14,5 @@ If it is also the localhost "localhost/versions" is possible, too. If it is anot
 - certs.txt contains the certs base64 coded
 
 For getting the cdn files, you can use my https://github.com/V-Cyberpunk/Linux-Server-Toolscripts/blob/main/mk_cdn.sh script. eu, us, arctium are the same, but good to have all sources maybe.
+
+Compiling and Options are the same like in the original project.
