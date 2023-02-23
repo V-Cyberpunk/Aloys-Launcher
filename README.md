@@ -8,7 +8,7 @@ Do you want dependency from a random person? Sure, you won't! So, here is my sol
 You can host the files in your own lab or with local httpd on localhost.
 
 ## Example
-For example: if your machines hostname is "tc-server" and versions file is in "/var/www/html/versions" your entry for versions.txt will be "tc-server/versions".<br />
+For example: if your machines hostname is "tc-server" and versions file is in "/var/www/html/versions" your entry for versions.conf will be "tc-server/versions".<br />
 If it is also the localhost "localhost/versions" is possible, too. If it is another server in your network, you will need a DNS A record or an entry in your hosts, because WoW needs a domain!
 
 ## The files
