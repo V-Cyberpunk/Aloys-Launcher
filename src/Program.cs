@@ -1,11 +1,13 @@
 ﻿// Copyright (c) V.
-// Licensed under the MIT license. See LICENSE file in the project root for full license information.
+// Licensed under the GPLv3 license. See LICENSE file in the project root for full license information.
 
 using System.CommandLine.Parsing;
 using Aloys.WoW.Launcher;
 using static Aloys.WoW.Launcher.Misc.Helpers;
 
-// "Arctium" should not be removed from the final binary name. hier ists "aloys"!
+CheckConf();
+
+// "Aloys" should not be removed from the final binary name.
 if (!Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("aloys"))
     WaitAndExit();
 

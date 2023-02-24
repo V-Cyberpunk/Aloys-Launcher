@@ -1,5 +1,5 @@
 // Copyright (c) V.
-// Licensed under the MIT license. See LICENSE file in the project root for full license information.
+// Licensed under the GPLv3 license. See LICENSE file in the project root for full license information.
 
 using System.CommandLine.Parsing;
 using System.Reflection.PortableExecutable;
@@ -127,7 +127,7 @@ class Launcher
                 {
                     NativeWindows.NtSuspendProcess(processInfo.ProcessHandle);
 
-                    byte[] certBundleData = Convert.FromBase64String(Patches.Common.CertBundleData);
+                    byte[] certBundleData = Convert.FromBase64String(Patches.Common.GetCertBundleData());
 
                     // Build the version URL from the game binary build.
                     var clientVersion = GetVersionValueFromClient(appPath);

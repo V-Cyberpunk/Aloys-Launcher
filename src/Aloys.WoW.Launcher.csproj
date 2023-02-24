@@ -12,7 +12,7 @@
         <LangVersion>preview</LangVersion>
         <AssemblyVersion>10.0.0.0</AssemblyVersion>
         <FileVersion>10.0.0.0</FileVersion>
-        <Copyright>Aloy</Copyright>
+        <Copyright>V</Copyright>
         <Platforms>x64;ARM64</Platforms>
         <ImplicitUsings>enable</ImplicitUsings>
         <DefineConstants>$(DefineConstants);$(Platform)</DefineConstants>
