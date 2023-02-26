@@ -18,6 +18,9 @@ If it is also the localhost "localhost/versions" is possible, too. If it is anot
 
 For getting the cdn files, you can use my https://github.com/V-Cyberpunk/Linux-Server-Toolscripts/blob/main/mk_cdn.sh script. eu, us, arctium are the same, but good to have all sources maybe.
 
+## Companiontool
+The Companiontool administrates CDN links, portal link ans certs for Retail, Classic and Classic-Era
+
 ## Compiling and usage
 
 Compiling and options are the same like in the original project.
