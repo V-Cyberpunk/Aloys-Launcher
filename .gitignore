@@ -1,2 +1,8 @@
 .vs/
-Aloys-Launcher/.vs
+Aloys-Launcher/.vs/
+Aloys-Launcher/src/Aloys.WoW.Launcher.csproj.user
+build/
+src/obj/
+Aloys.Companion/bin/
+Aloys.Companion/obj/
+Aloys.Companion/Aloys.Companion.csproj.user
