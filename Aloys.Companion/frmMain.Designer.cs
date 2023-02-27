@@ -37,6 +37,10 @@
             this.txtVersions = new System.Windows.Forms.TextBox();
             this.txtPortal = new System.Windows.Forms.TextBox();
             this.tblMain = new System.Windows.Forms.TableLayoutPanel();
+            this.menu = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblCerts = new System.Windows.Forms.Label();
             this.tblCmb = new System.Windows.Forms.TableLayoutPanel();
             this.cmbVersion = new System.Windows.Forms.ComboBox();
@@ -47,6 +51,7 @@
             this.txtCerts = new System.Windows.Forms.TextBox();
             this.tblCDN.SuspendLayout();
             this.tblMain.SuspendLayout();
+            this.menu.SuspendLayout();
             this.tblCmb.SuspendLayout();
             this.tblButtons.SuspendLayout();
             this.SuspendLayout();
@@ -64,7 +69,7 @@
             this.tblCDN.Controls.Add(this.txtVersions, 1, 0);
             this.tblCDN.Controls.Add(this.txtPortal, 1, 2);
             this.tblCDN.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tblCDN.Location = new System.Drawing.Point(4, 55);
+            this.tblCDN.Location = new System.Drawing.Point(4, 95);
             this.tblCDN.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tblCDN.Name = "tblCDN";
             this.tblCDN.RowCount = 3;
@@ -157,16 +162,18 @@
             this.tblMain.BackColor = System.Drawing.Color.Transparent;
             this.tblMain.ColumnCount = 1;
             this.tblMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblMain.Controls.Add(this.tblCDN, 0, 1);
-            this.tblMain.Controls.Add(this.lblCerts, 0, 2);
-            this.tblMain.Controls.Add(this.tblCmb, 0, 0);
+            this.tblMain.Controls.Add(this.tblCDN, 0, 2);
+            this.tblMain.Controls.Add(this.menu, 0, 0);
+            this.tblMain.Controls.Add(this.lblCerts, 0, 3);
+            this.tblMain.Controls.Add(this.tblCmb, 0, 1);
             this.tblMain.Controls.Add(this.tblButtons, 0, 4);
-            this.tblMain.Controls.Add(this.txtCerts, 0, 3);
+            this.tblMain.Controls.Add(this.txtCerts, 0, 4);
             this.tblMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tblMain.Location = new System.Drawing.Point(0, 0);
             this.tblMain.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tblMain.Name = "tblMain";
-            this.tblMain.RowCount = 5;
+            this.tblMain.RowCount = 6;
+            this.tblMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tblMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tblMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 250F));
             this.tblMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 83F));
@@ -175,13 +182,50 @@
             this.tblMain.Size = new System.Drawing.Size(1097, 1148);
             this.tblMain.TabIndex = 1;
             // 
+            // menu
+            // 
+            this.menu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.menu.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.menu.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1});
+            this.menu.Location = new System.Drawing.Point(0, 0);
+            this.menu.Name = "menu";
+            this.menu.Size = new System.Drawing.Size(1097, 40);
+            this.menu.TabIndex = 1;
+            this.menu.Text = "menuStrip1";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.helpToolStripMenuItem,
+            this.closeToolStripMenuItem});
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(37, 36);
+            this.toolStripMenuItem1.Text = "?";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(161, 36);
+            this.helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
+            // 
+            // closeToolStripMenuItem
+            // 
+            this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(161, 36);
+            this.closeToolStripMenuItem.Text = "Close";
+            this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
+            // 
             // lblCerts
             // 
             this.lblCerts.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCerts.AutoSize = true;
             this.lblCerts.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblCerts.ForeColor = System.Drawing.Color.Gold;
-            this.lblCerts.Location = new System.Drawing.Point(4, 321);
+            this.lblCerts.Location = new System.Drawing.Point(4, 361);
             this.lblCerts.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCerts.Name = "lblCerts";
             this.lblCerts.Size = new System.Drawing.Size(1089, 40);
@@ -196,7 +240,7 @@
             this.tblCmb.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tblCmb.Controls.Add(this.cmbVersion, 0, 0);
             this.tblCmb.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tblCmb.Location = new System.Drawing.Point(3, 3);
+            this.tblCmb.Location = new System.Drawing.Point(3, 43);
             this.tblCmb.Name = "tblCmb";
             this.tblCmb.RowCount = 1;
             this.tblCmb.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -306,11 +350,11 @@
             this.txtCerts.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtCerts.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtCerts.ForeColor = System.Drawing.Color.LightGreen;
-            this.txtCerts.Location = new System.Drawing.Point(3, 386);
+            this.txtCerts.Location = new System.Drawing.Point(3, 426);
             this.txtCerts.Multiline = true;
             this.txtCerts.Name = "txtCerts";
             this.txtCerts.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtCerts.Size = new System.Drawing.Size(1091, 676);
+            this.txtCerts.Size = new System.Drawing.Size(1091, 636);
             this.txtCerts.TabIndex = 3;
             // 
             // frmMain
@@ -323,14 +367,18 @@
             this.ClientSize = new System.Drawing.Size(1097, 1148);
             this.Controls.Add(this.tblMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menu;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Aloys Companion";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMain_FormClosed);
             this.Shown += new System.EventHandler(this.frmMain_Shown);
             this.tblCDN.ResumeLayout(false);
             this.tblCDN.PerformLayout();
             this.tblMain.ResumeLayout(false);
             this.tblMain.PerformLayout();
+            this.menu.ResumeLayout(false);
+            this.menu.PerformLayout();
             this.tblCmb.ResumeLayout(false);
             this.tblButtons.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -355,5 +403,9 @@
         private Button btnStart;
         private TableLayoutPanel tblCmb;
         private ComboBox cmbVersion;
+        private MenuStrip menu;
+        private ToolStripMenuItem toolStripMenuItem1;
+        private ToolStripMenuItem helpToolStripMenuItem;
+        private ToolStripMenuItem closeToolStripMenuItem;
     }
 }

@@ -12,6 +12,7 @@ namespace Aloys.Companion
         string file3 = @"certs.conf";
         string config_wtf = String.Empty;
         List<string> config = new List<string>();
+        SimpleHTTPServer httpd = new SimpleHTTPServer(@"www", 80);
 
         public frmMain()
         {
@@ -117,7 +118,7 @@ namespace Aloys.Companion
             {
                 using (StreamWriter sw = File.AppendText(file))
                 {
-                    sw.Write("localhost/versions");
+                    sw.Write("localhost/retail/versions");
                 }
             }
 
@@ -125,7 +126,7 @@ namespace Aloys.Companion
             {
                 using (StreamWriter sw = File.AppendText(file2))
                 {
-                    sw.Write("localhost/cdns");
+                    sw.Write("localhost/retail/cdns");
                 }
             }
 
@@ -171,7 +172,6 @@ namespace Aloys.Companion
                         if (File.Exists(@"Aloys WoW Launcher.exe"))
                         {
                             System.Diagnostics.Process.Start(@"Aloys WoW Launcher.exe");
-                            Close();
                         }
                         else
                             MessageBox.Show("Launcher not found! Are Launcher and Companiontool in the same correct (e.g. C:\\World of Warcraft) directory?",
@@ -186,7 +186,6 @@ namespace Aloys.Companion
                             startInfo.WindowStyle = ProcessWindowStyle.Normal;
                             startInfo.Arguments = " --version Classic";
                             Process.Start(startInfo);
-                            Close();
                         }
                         else
                             MessageBox.Show("Launcher not found! Are Launcher and Companiontool in the same correct (e.g. C:\\World of Warcraft) directory?",
@@ -201,7 +200,6 @@ namespace Aloys.Companion
                             startInfo.WindowStyle = ProcessWindowStyle.Normal;
                             startInfo.Arguments = " --version ClassicEra";
                             Process.Start(startInfo);
-                            Close();
                         }
                         else
                             MessageBox.Show("Launcher not found! Are Launcher and Companiontool in the same correct (e.g. C:\\World of Warcraft) directory?",
@@ -220,22 +218,90 @@ namespace Aloys.Companion
                 case 0:
                     {
                         config_wtf = @"_retail_\WTF\Config.wtf";
+                        if (!File.Exists(file))
+                        {
+                            using (StreamWriter sw = File.CreateText(file))
+                            {
+                                sw.Write("localhost/retail/versions");
+                            }
+                        }
+
+                        if (!File.Exists(file2))
+                        {
+                            using (StreamWriter sw = File.CreateText(file2))
+                            {
+                                sw.Write("localhost/retail/cdns");
+                            }
+                        }
                         break;
                     }
                 case 1:
                     {
                         config_wtf = @"_classic_\WTF\Config.wtf";
+                        if (!File.Exists(file))
+                        {
+                            using (StreamWriter sw = File.CreateText(file))
+                            {
+                                sw.Write("localhost/classic/versions");
+                            }
+                        }
+
+                        if (!File.Exists(file2))
+                        {
+                            using (StreamWriter sw = File.CreateText(file2))
+                            {
+                                sw.Write("localhost/classic/cdns");
+                            }
+                        }
                         break;
                     }
                 case 2:
                     {
                         config_wtf = @"_classic_era\WTF\Config.wtf";
+                        if (!File.Exists(file))
+                        {
+                            using (StreamWriter sw = File.CreateText(file))
+                            {
+                                sw.Write("localhost/classic_era/versions");
+                            }
+                        }
+
+                        if (!File.Exists(file2))
+                        {
+                            using (StreamWriter sw = File.CreateText(file2))
+                            {
+                                sw.Write("localhost/classic_era/cdns");
+                            }
+                        }
                         break;
                     }
             }
+            txtVersions.Text = File.ReadAllText(file);
+            txtCDNS.Text = File.ReadAllText(file2);
             CheckConfWTF();
             Properties.Settings.Default.game = cmbVersion.SelectedIndex;
             Properties.Settings.Default.Save();
+        }
+
+        private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Local CDN links:\n\nRetail:\n\"localhost/retail/versions\"\n\"localhost/retail/cdns\"\n\nClassic:\n\"localhost/classic/versions\"\n\"localhost/classic/cdns\"\n\nClassic Era:\n\"localhost/classic_era/versions\"\n\"localhost/classic_era/cdns\"",
+                    "Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
