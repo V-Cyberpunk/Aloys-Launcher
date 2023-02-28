@@ -2,7 +2,7 @@
 ## Description and little theory
 Modified version derived from the Arctium WoW-Launcher with some great new features under GPLv3.
 
-Actually I externalized CDN links for versions and cdns file. Also the certs for adding own self signed certs to the launcher and server.<br />
+Currently I externalized CDN links for versions and cdns file. Also the certs for adding own self signed certs to the launcher and server.<br />
 These files are needed for real independency from any servers. The actual Arctium WoW Launcher does link hardcoded to it's own CDN and hardcodes the certs, but this is crap. It's not good to be dependent from anothers server and hardcoded certs. The self signed TrinityCore certs are in the src and best known, so anyone can decrypt the connection. With own self signed certs, you are secure.<br />
 Do you want dependency from a random person? Sure, you won't! So, here is my solution, the real deal, for self-sufficiency.
 You can host the files in your own lab or with local httpd included in the companiontool on localhost. Files are here for your lab: https://github.com/V-Cyberpunk/World-of-Warcraft-Local-CDN-files
